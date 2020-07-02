@@ -1,0 +1,40 @@
+using UnityEngine;
+using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using ExcelDataClass;
+///
+/// !!! Machine generated code !!!
+///
+namespace ExcelDataClass
+{
+	[CustomEditor(typeof($WorkSheetClassName$))]
+	public class $ClassName$ : BaseExcelEditor<$WorkSheetClassName$>
+	{	    
+		$DataProperty$
+		
+		public override void OnEnable()
+		{
+			base.OnEnable();
+
+			$DataPropertyInitalize$
+
+		}
+		public override bool Load()
+		{
+			$WorkSheetClassName$ targetData = target as $WorkSheetClassName$;
+
+			return targetData.Load();
+		}
+		
+		public override void OnInspectorGUI()
+		{
+			base.OnInspectorGUI();
+
+			$DataPropertyInspector$
+
+		}
+	}
+}

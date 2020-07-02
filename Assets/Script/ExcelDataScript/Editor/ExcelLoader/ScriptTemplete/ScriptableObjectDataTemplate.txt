@@ -1,0 +1,35 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+#if UNITY_EDITOR
+using UnityEditor;
+using System.IO;
+#endif
+namespace ExcelDataClass
+{
+	[System.Serializable]
+	public partial class $ExcelData$ : BaseScriptableObject<$ExcelData$>
+	{	
+		$Types$
+		
+		$DataClass$
+		
+#if UNITY_EDITOR
+
+		public override bool Load()
+		{
+			string path = this.SheetName;
+			
+			if (!File.Exists(path))
+				return false;
+
+			$DataDeserialize$
+			EditorUtility.SetDirty(this);
+			AssetDatabase.SaveAssets();
+			return true;
+		}
+#endif
+		
+	}
+}
