@@ -1,5 +1,4 @@
 # ExcelToScriptableObject
-ExcelToScriptableObject
 
 Unity ExcelToScriptableObject
 
